@@ -31,9 +31,9 @@ public class MissionTest {
 @Test
 
 	public void testDeleteMission()  throws Exception {
-		Mission mission =im.FindMissionById(2).get();
+		Mission mission =im.FindMissionById(5).get();
 		
-		im.deleteMission(2);
+		im.deleteMission(5);
 		Mission mission1=null;
 		Optional<Mission> optionalMission=im.FindMissionById(1);
 		if(optionalMission.isPresent()) {
