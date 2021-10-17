@@ -18,5 +18,7 @@ public interface IMissionService {
 	Optional<Mission> FindMissionById(int id);
 
 	void affecterMissionADepartement(int i, int j);
+	void deleteById(int id);
+	
 
 }
