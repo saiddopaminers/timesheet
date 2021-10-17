@@ -36,7 +36,11 @@ package tn.esprit.spring.services;
 
 
 		private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(MissionService.class);
-
+@Override
+		
+		public  void deleteById(int id) {
+			missionRepository.deleteById(id);
+		}
 	@Override
 
 			public Mission ajouterMission(Mission mission) {
