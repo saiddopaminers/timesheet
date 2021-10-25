@@ -33,10 +33,7 @@ public class EmployeTest {
 	@Autowired
 	EmployeRepository employeRepo;
     
-	@Test
-     public void contextLoads() {
-
-     }
+	
 
 
     @Test
