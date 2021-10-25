@@ -3,6 +3,7 @@ package tn.esprit.spring.services;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -94,8 +95,11 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 	public void deleteEmployeById(int employeId)
 	{
-		Employe employe = employeRepository.findById(employeId).get();
-
+		Optional<Employe> employeOptional = employeRepository.findById(employeId);
+		Employe employe = new Employe();
+		if(employeOptional.isPresent()){
+			employe = employeOptional.get();
+		}
 		//Desaffecter l'employe de tous les departements
 		//c'est le bout master qui permet de mettre a jour
 		//la table d'association
@@ -107,8 +111,12 @@ public class EmployeServiceImpl implements IEmployeService {
 	}
 
 	public void deleteContratById(int contratId) {
-		Contrat contratManagedEntity = contratRepoistory.findById(contratId).get();
-		contratRepoistory.delete(contratManagedEntity);
+		Optional<Contrat> employeOptional = contratRepoistory.findById(contratId);
+		Contrat contrat = new Contrat();
+		if(employeOptional.isPresent()){
+			contrat = employeOptional.get();
+		}
+		contratRepoistory.delete(contrat);
 
 	}
 
