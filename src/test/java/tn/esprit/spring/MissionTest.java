@@ -12,10 +12,9 @@ import org.apache.logging.log4j.LogManager;
 import org.assertj.core.api.Assertions;
 
 import org.junit.Ignore;
+import org.junit.Test;
 
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -37,7 +36,7 @@ public class MissionTest {
 
 	//Methode sert à tester l'ajout
 
-	@BeforeAll
+	//@BeforeAll
 	public  void ajouterMissionTest() throws ParseException {
 		Mission m = new Mission();
 		m.setId(10);
@@ -48,7 +47,7 @@ public class MissionTest {
 
 	}
 	//Methode sert à tester l'affichage
-	@Test 
+	/*@Test 
 	public void testRetrieveAllMissionsTest() {
 		try {
 			List<Mission> mission=im.getallMissions();
@@ -58,7 +57,7 @@ public class MissionTest {
 		catch(Exception e) {
 			l.error("Erreur dans RetrieveAllMissions()"+e);
 		}
-	}
+	}*/
 
 	//Methode sert à tester l'update
 	@Test
@@ -73,14 +72,14 @@ public class MissionTest {
 			l.error("id n'esxiste pas"+e);}
 	}
 	//Methode sert à tester l'affectation
-	@Test
+	/*@Test
 	public void affecterMissionADepartementTest()  throws ParseException {
 		im.affecterMissionADepartement(1,1);
 	}
-	@AfterAll
+	//@AfterAll
 	void tearDown() {
 		im.deleteById(10);
-	}
+	}*/
 	//Methode sert à tester la suppression 
 	@Ignore
 	@Test
