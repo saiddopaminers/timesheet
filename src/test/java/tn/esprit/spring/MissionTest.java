@@ -12,10 +12,10 @@ import org.apache.logging.log4j.LogManager;
 import org.assertj.core.api.Assertions;
 
 import org.junit.Ignore;
-import org.junit.Test;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-
+import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -79,7 +79,7 @@ public class MissionTest {
 	}
 	@AfterAll
 	void tearDown() {
-		im.DeleteById(10);
+		im.deleteById(10);
 	}
 	//Methode sert à tester la suppression 
 	@Ignore
@@ -95,11 +95,6 @@ public class MissionTest {
 		Assertions.assertThat(mission1).isNull();
 
 	}}
-
-
-
-
-
 
 
 
