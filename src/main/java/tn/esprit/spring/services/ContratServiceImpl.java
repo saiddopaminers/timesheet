@@ -8,19 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.Departement;
-import tn.esprit.spring.entities.Mission;
+
+import tn.esprit.spring.entities.Employe;
+
 import tn.esprit.spring.repository.ContratRepository;
-import tn.esprit.spring.repository.MissionRepository;
+import tn.esprit.spring.repository.EmployeRepository;
+
 @Service
 public class ContratServiceImpl implements IContratService{
 
 	@Autowired
 	ContratRepository contratRepository;
+	@Autowired
+	EmployeRepository employeRepository;
 	public ContratServiceImpl() {
 		// TODO Auto-generated constructor stub
 	}
-	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(MissionService.class);
+	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(ContratServiceImpl.class);
 	@Override
 			
 			public  void deleteById(int id) {
@@ -79,4 +83,27 @@ public class ContratServiceImpl implements IContratService{
 					return contratRepository.save(contrat);
 				}
 				
+				public Contrat affecterContratAEmploye(int contratId, int employeId) {
+					try {
+						l.info("In affecterContratAEmploye : ");
+						Contrat contratManagedEntity = contratRepository.findById(contratId).orElse(null);
+						l.debug("Contrat par identifiant");
+						Employe employeManagedEntity = employeRepository.findById(employeId).orElse(null);
+						l.debug("Employe par identifiant");
+
+						if (contratManagedEntity != null) {
+							l.debug("In If ");
+							contratManagedEntity.setEmploye(employeManagedEntity);
+							l.info("L'affectation a été faite");
+							Contrat c = contratRepository.save(contratManagedEntity);
+							l.info("Out of affecterContratAEmploye ");
+							return c;
+						}
+						return null;
+					} catch (Exception e) {
+						l.error("erreur In affecterContratAEmploye() : Failed to affect " + e);
+						return null;
+					}
+
+				}
 }

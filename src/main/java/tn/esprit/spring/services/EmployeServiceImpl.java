@@ -158,4 +158,16 @@ public class EmployeServiceImpl implements IEmployeService {
 				return (List<Employe>) employeRepository.findAll();
 	}
 
+	@Override
+	public Employe findById(int employeId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
+	
+
+	
+
 }
