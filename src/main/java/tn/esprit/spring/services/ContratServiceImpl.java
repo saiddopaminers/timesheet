@@ -8,19 +8,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tn.esprit.spring.entities.Contrat;
-import tn.esprit.spring.entities.Departement;
-import tn.esprit.spring.entities.Mission;
+
+
 import tn.esprit.spring.repository.ContratRepository;
-import tn.esprit.spring.repository.MissionRepository;
+
 @Service
 public class ContratServiceImpl implements IContratService{
 
 	@Autowired
 	ContratRepository contratRepository;
 	public ContratServiceImpl() {
-		// TODO Auto-generated constructor stub
+
 	}
-	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(MissionService.class);
+
 	@Override
 			
 			public  void deleteById(int id) {
@@ -53,7 +53,7 @@ public class ContratServiceImpl implements IContratService{
 					List<Contrat> contrats =(List<Contrat>) contratRepository.findAll();
 					for (Contrat contrat :contrats) {
 						
-						l.info("contrats :" +contrat);
+					
 					}
 					return contrats;
 				}
@@ -74,7 +74,7 @@ public class ContratServiceImpl implements IContratService{
 				
 				@Override
 				public Contrat updateContrat(Contrat contrat) {
-					// TODO Auto-generated method stub
+
 					
 					return contratRepository.save(contrat);
 				}

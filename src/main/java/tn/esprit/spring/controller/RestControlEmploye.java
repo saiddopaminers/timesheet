@@ -38,8 +38,6 @@ public class RestControlEmploye {
 	ITimesheetService itimesheetservice;
 
 	
-	// http://localhost:8081/SpringMVC/servlet/ajouterEmployer
-	//{"id":1,"nom":"kallel", "prenom":"khaled", "email":"Khaled.kallel@ssiiconsulting.tn", "isActif":true, "role":"INGENIEUR"}
 	
 	@PostMapping("/ajouterEmployer")
 	@ResponseBody
@@ -49,14 +47,14 @@ public class RestControlEmploye {
 		return employe;
 	}
 	
-	// Modifier email : http://localhost:8081/SpringMVC/servlet/modifyEmail/1/newemail
+
 	@PutMapping(value = "/modifyEmail/{id}/{newemail}") 
 	@ResponseBody
 	public void mettreAjourEmailByEmployeId(@PathVariable("newemail") String email, @PathVariable("id") int employeId) {
 		iemployeservice.mettreAjourEmailByEmployeId(email, employeId);
 		
 	}
-	// http://localhost:8081/SpringMVC/servlet/affecterEmployeADepartement/1/1
+
 	@PutMapping(value = "/affecterEmployeADepartement/{idemp}/{iddept}") 
 	public void affecterEmployeADepartement(@PathVariable("idemp")int employeId, @PathVariable("iddept")int depId) {
 		iemployeservice.affecterEmployeADepartement(employeId, depId);
@@ -70,8 +68,6 @@ public class RestControlEmploye {
 		iemployeservice.desaffecterEmployeDuDepartement(employeId, depId);
 	}
 
-	// http://localhost:8081/SpringMVC/servlet/ajouterContrat
-	//{"reference":6,"dateDebut":"2020-03-01","salaire":2000,"typeContrat":"CDD"}
 	@PostMapping("/ajouterContrat")
 	@ResponseBody
 	public int ajouterContrat(@RequestBody Contrat contrat) {

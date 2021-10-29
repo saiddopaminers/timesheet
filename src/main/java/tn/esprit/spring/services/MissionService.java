@@ -1,11 +1,11 @@
 package tn.esprit.spring.services;
 
 
-	import java.util.ArrayList;
+
 	import java.util.List;
 	import java.util.Optional;
 
-	import javax.transaction.Transactional;
+	
 
 	import org.apache.logging.log4j.LogManager;
 	import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,7 @@ package tn.esprit.spring.services;
 			
 		public MissionService() {
 			super();
-			// TODO Auto-generated constructor stub
+
 		}
 
 
@@ -66,7 +66,7 @@ package tn.esprit.spring.services;
 				List<Mission> missions =(List<Mission>) missionRepository.findAll();
 				for (Mission mission : missions) {
 					
-					l.info("missions :" +mission);
+					l.info("les missions sont:" +mission);
 				}
 				return missions;
 			}
@@ -75,16 +75,16 @@ package tn.esprit.spring.services;
 		
 			
 			@Override
-			public void deleteMission(int Id) {
-				missionRepository.deleteById(Id);
-				System.out.println("********************");
-				l.info("Service: Fetching mission with id", Id);
+			public void deleteMission(int id) {
+				missionRepository.deleteById(id);
+			
+			
 				
 			}
 		
 			@Override
 			public Mission updateMission(Mission mission) {
-				// TODO Auto-generated method stub
+		
 				
 				return missionRepository.save(mission);
 			}
