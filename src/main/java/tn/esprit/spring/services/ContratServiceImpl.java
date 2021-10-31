@@ -21,9 +21,7 @@ public class ContratServiceImpl implements IContratService{
 	ContratRepository contratRepository;
 	@Autowired
 	EmployeRepository employeRepository;
-	public ContratServiceImpl() {
-		// TODO Auto-generated constructor stub
-	}
+	
 	private static final org.apache.logging.log4j.Logger l= LogManager.getLogger(ContratServiceImpl.class);
 	@Override
 			
@@ -66,19 +64,19 @@ public class ContratServiceImpl implements IContratService{
 			
 			
 				@Override
-				public void deleteContrat(int Id) {
-					contratRepository.deleteById(Id);
+				public void deleteContrat(int Idd) {
+					contratRepository.deleteById(Idd);
 					
 					
 				}
 				@Override
 				public Contrat getContratById(int reference) {
-					return contratRepository.findById(reference).get();	}
+					return contratRepository.findById(reference).orElse(null);	}
 			
 				
 				@Override
 				public Contrat updateContrat(Contrat contrat) {
-					// TODO Auto-generated method stub
+
 					
 					return contratRepository.save(contrat);
 				}
