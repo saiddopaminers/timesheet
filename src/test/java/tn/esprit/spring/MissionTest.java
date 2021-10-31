@@ -78,7 +78,7 @@ public class MissionTest {
 		catch (Exception e) {
 			l.error("id n'esxiste pas"+e);}
 	}
-	//Methode sert à tester l'affectation
+	
 	/*@Test
 	public void affecterMissionADepartementTest()  throws ParseException {
 		/*Entreprise e = new Entreprise("orange","telecome");
