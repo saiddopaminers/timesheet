@@ -7,18 +7,20 @@ import tn.esprit.spring.entities.Contrat;
 
 public interface IContratService {
 
-	void deleteById(int id);
+	public void deleteById(int id);
 
-	Contrat ajouterContrat(Contrat contrat);
+	public Contrat ajouterContrat(Contrat contrat);
 
-	Optional<Contrat> FindContratById(int id);
+	public Optional<Contrat> FindContratById(int id);
 
-	List<Contrat> getallContrats();
+	public List<Contrat> getallContrats();
 
-	Contrat updateContrat(Contrat contrat);
+	public Contrat updateContrat(Contrat contrat);
 
-	void deleteContrat(int Id);
+	public void deleteContrat(int Id);
 
-	Contrat getContratById(int reference);
+	public Contrat getContratById(int reference);
+
+	public Contrat affecterContratAEmploye(int idC, int employeId);
 
 }
