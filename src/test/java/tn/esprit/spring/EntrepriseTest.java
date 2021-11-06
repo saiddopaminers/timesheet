@@ -47,5 +47,8 @@ public class EntrepriseTest {
 	public void testRetriveAllEntreprises() {
 		List<Entreprise> Entreprises = (List<Entreprise>) es.getAllEntreprises();
 		assertThat(Entreprises).size().isPositive();
+
+
 	}
+
 	}
