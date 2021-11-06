@@ -18,7 +18,7 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import org.junit.Test;
+
 
 
 
@@ -43,7 +43,7 @@ public class MissionTest {
 
 	//Methode sert à tester l'ajout
 
-	//@BeforeAll
+	@BeforeAll
 	public  void ajouterMissionTest() throws ParseException {
 		Mission m = new Mission();
 		m.setId(10);
