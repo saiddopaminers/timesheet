@@ -54,7 +54,7 @@ public class MissionTest {
 
 	}
 	//Methode sert à tester l'affichage
-	/*@Test 
+	@Test 
 	public void testRetrieveAllMissionsTest() {
 		try {
 			List<Mission> mission=im.getallMissions();
@@ -64,7 +64,7 @@ public class MissionTest {
 		catch(Exception e) {
 			l.error("Erreur dans RetrieveAllMissions()"+e);
 		}
-	}*/
+	}
 
 	//Methode sert à tester l'update
 	@Test
@@ -82,8 +82,8 @@ public class MissionTest {
 	/*@Test
 	public void affecterMissionADepartementTest()  throws ParseException {
 		im.affecterMissionADepartement(1,1);
-	}
-	//@AfterAll
+	}*/
+	@AfterAll
 	void tearDown() {
 		im.deleteById(10);
 
