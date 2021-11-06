@@ -12,7 +12,14 @@ import org.apache.logging.log4j.LogManager;
 import org.assertj.core.api.Assertions;
 
 import org.junit.Ignore;
+
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
 import org.junit.Test;
+
 
 
 import org.junit.runner.RunWith;
@@ -79,7 +86,9 @@ public class MissionTest {
 	//@AfterAll
 	void tearDown() {
 		im.deleteById(10);
-	}*/
+
+	}
+
 	//Methode sert à tester la suppression 
 	@Ignore
 	@Test
@@ -94,11 +103,6 @@ public class MissionTest {
 		Assertions.assertThat(mission1).isNull();
 
 	}}
-
-
-
-
-
 
 
 
