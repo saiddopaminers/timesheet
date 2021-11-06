@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.services.DepartementServiceImpl;
-import tn.esprit.spring.services.EmployeServiceImpl;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -25,30 +25,8 @@ public class DepartementTest {
 	@Autowired
 	DepartementRepository departementRepository;
 
-@Test
-public void contextLoads(){
 
-}
 
-@Test
-public void testCreateDepartement(){
-	Departement departement = new Departement ("ItIt");
-	int depId = departementServiceImpl.ajouterDepartement(departement);
-	if (departementRepository.findById(depId).isPresent()) {
-		departementServiceImpl.deleteDepartementById(depId);
-		int depNewId = departementServiceImpl.ajouterDepartement(departement);
-		assertNotEquals(0, depNewId);
-		l.info("Departement added with success : depID = " +depId+" new depId=" + depNewId);
-	}
-	else if (depId >0){
-		assertNotNull(departement);
-		l.warn("departement added" + departement.toString());
-	}
-	else {
-		assertNull(null);
-		l.warn("departement not added");
-	}
-}
 
 	@Test
 	public void testAddDepartement() throws ParseException {
@@ -59,7 +37,17 @@ public void testCreateDepartement(){
 	}
 
 	@Test
-	public void testretrieveAllDepartement(){
+
+	public void testAddDepartement() throws ParseException {
+		Departement d = new Departement("DEP B");
+		Departement savedDepartement = departementRepository.save(d);
+		assertNotNull(savedDepartement.getId());
+		departementRepository.delete(savedDepartement);
+	}
+
+	@Test
+	public void testRetrieveAllDepartement(){
+
 		departementServiceImpl.retrieveAllDepartement();
 	}
 	

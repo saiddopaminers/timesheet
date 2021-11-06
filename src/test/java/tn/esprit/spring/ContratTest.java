@@ -1,9 +1,13 @@
+
 package tn.esprit.spring;
+
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -72,7 +76,9 @@ public void suppressionContrat() {
 		IC.deleteById(721);
 		boolean test=true;
 	
+
 	assertEquals(test, true,"Supression du departement avec succés");
+
 	
 	if(test) {
 		l.info(" deleted  successfully ");
