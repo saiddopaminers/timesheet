@@ -28,7 +28,6 @@ public class DepartementTest {
 
 
 
-
 	@Test
 	public void testAddDepartement() throws ParseException {
 		Departement d = new Departement("DEP B");
@@ -38,7 +37,17 @@ public class DepartementTest {
 	}
 
 	@Test
+
+	public void testAddDepartement() throws ParseException {
+		Departement d = new Departement("DEP B");
+		Departement savedDepartement = departementRepository.save(d);
+		assertNotNull(savedDepartement.getId());
+		departementRepository.delete(savedDepartement);
+	}
+
+	@Test
 	public void testRetrieveAllDepartement(){
+
 		departementServiceImpl.retrieveAllDepartement();
 	}
 	

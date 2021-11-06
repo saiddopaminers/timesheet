@@ -25,7 +25,7 @@ public class EntrepriseTest {
 		es.ajouterEntreprise(e);
 		assertThat(e.getId()).isPositive();
 	}
-/*
+
 	@Test
 	public void testFindEntrepriseById() {
 		Entreprise entreprise = es.getEntrepriseById(2);
@@ -47,5 +47,8 @@ public class EntrepriseTest {
 	public void testRetriveAllEntreprises() {
 		List<Entreprise> Entreprises = (List<Entreprise>) es.getAllEntreprises();
 		assertThat(Entreprises).size().isPositive();
-	}*/
+
+
+	}
+
 	}
