@@ -3,8 +3,7 @@ package tn.esprit.spring;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -27,7 +26,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.apache.logging.log4j.LogManager;
 import tn.esprit.spring.entities.Contrat;
 import tn.esprit.spring.entities.Employe;
-import tn.esprit.spring.entities.Mission;
+
 import tn.esprit.spring.services.ContratServiceImpl;
 import tn.esprit.spring.services.IContratService;
 import tn.esprit.spring.services.IEmployeService;
