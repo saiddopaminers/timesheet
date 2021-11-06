@@ -12,5 +12,9 @@ public interface IDepartementService {
 	public void deleteDepartementById(int departementId);
 	public void deleteAllDepartements();
 	
+	public String addDepartement(Departement d);
+	public List<Departement> retrieveAllDepartement();
+	
+	
 	
 }
