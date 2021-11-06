@@ -44,7 +44,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency><dependency>
+			<groupId>log4j</groupId>
+
+			<artifactId>log4j</artifactId>
+
+			<version>1.2.17</version>
+
+
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.7.1</version>
+			</dependency>
 	</dependencies>
 
 	<build>
@@ -53,6 +66,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
 		</plugins>
 	</build>
 
