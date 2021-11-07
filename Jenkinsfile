@@ -1,10 +1,19 @@
 pipeline {
+    environment { 
+
+        registry = "siwar/Timesheet" 
+
+        registryCredential = 'dockerHub' 
+
+        dockerImage = '' 
+
+    }
     agent any
     stages{
             stage('checkout git'){
                 steps {
                     echo 'Pulling...';
-                    git branch: 'siwar', url: 'https://github.com/saiddopaminers/timesheet.git';
+                    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet.git';
                     }
                }
                
@@ -34,17 +43,21 @@ pipeline {
             stage("publish to nexus") {
                 steps {
     
-                    bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet-spring-boot-core-data-jpa-mvc-REST-1 -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://localhost:9999/repository/maven-releases/ -Dfile=target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-1.0.war"
+                    bat "mvn clean package deploy:deploy-file -DgroupId=tn.esprit.spring -DartifactId=Timesheet -Dversion=1.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=deploymentRepo -Durl=http://localhost:9999/repository/maven-releases/ -Dfile=target/Timesheet-1.0.war"
                 
                         }
             }
+            
+            
+		
 }
-post{
-		success{
-			emailext body: 'Build success', subject: 'Jenkins', to:'siwar.berzouga@esprit.tn'
-		}
-		failure{
-			emailext body: 'Build failure', subject: 'Jenkins', to:'siwar.berzouga@esprit.tn'
-		}
-	}
+
+post {
+         failure {  
+             mail bcc: '', body: 'error text', cc: '', from: '', replyTo: '', subject: 'error', to: 'berzougasiwar20@gmail.com'         
+         }
+         success{  
+             mail bcc: '', body: 'success text', cc: '', from: '', replyTo: '', subject: 'success', to: 'berzougasiwar20@gmail.com'         
+         }
+     }
 }
