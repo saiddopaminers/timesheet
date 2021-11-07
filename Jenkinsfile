@@ -13,7 +13,7 @@ pipeline {
             stage('checkout git'){
                 steps {
                     echo 'Pulling...';
-                    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet.git';
+                    git branch: 'siwar', url: 'https://github.com/saiddopaminers/timesheet.git';
                     }
                }
                
