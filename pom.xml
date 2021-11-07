@@ -45,6 +45,11 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>5.7.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -53,7 +58,17 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+	
+			
 		</plugins>
 	</build>
+	
+	<distributionManagement>
+    <repository>
+      <id>deploymentRepo</id>
+      <url>http://localhost:9999/repository/maven-releases/</url>
+    </repository>
+    
+  </distributionManagement>
 
 </project>
