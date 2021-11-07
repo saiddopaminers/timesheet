@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.services.DepartementServiceImpl;
-import tn.esprit.spring.services.EmployeServiceImpl;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -28,6 +28,7 @@ public class DepartementTest {
 
 
 	@Test
+
 	public void testAddDepartement() throws ParseException {
 		Departement d = new Departement("DEP B");
 		Departement savedDepartement = departementRepository.save(d);
@@ -36,7 +37,8 @@ public class DepartementTest {
 	}
 
 	@Test
-	public void testretrieveAllDepartement(){
+	public void testRetrieveAllDepartement(){
+
 		departementServiceImpl.retrieveAllDepartement();
 	}
 	
