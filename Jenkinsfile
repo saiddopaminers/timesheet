@@ -4,7 +4,7 @@ stages{
 stage('checkout git'){
 steps {
     echo 'Pulling...';
-    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet.git';
+    git branch: 'said3', url: 'https://github.com/saiddopaminers/timesheet.git';
 }
 }
 stage('Test, build, sonar'){
@@ -42,5 +42,6 @@ post {
              mail bcc: '', body: 'success text', cc: '', from: '', replyTo: '', subject: 'success', to: 'saidsaidsaid123456789012@gmail.com'         
          }
      }
+     
      
 }
