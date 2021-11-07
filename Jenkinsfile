@@ -4,7 +4,7 @@ stages{
 stage('checkout git'){
 steps {
     echo 'Pulling...';
-    git branch: 'said3', url: 'https://github.com/saiddopaminers/timesheet.git';
+    git branch: 'said3', url: 'https://github.com/saiddopaminers/timesheet/tree/said3';
 }
 }
 stage('Test, build, sonar'){
