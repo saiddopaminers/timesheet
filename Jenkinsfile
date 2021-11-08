@@ -41,10 +41,5 @@ post {
          success{  
              mail bcc: '', body: 'success text', cc: '', from: '', replyTo: '', subject: 'success', to: 'saidsaidsaid123456789012@gmail.com'         
          }
-     }
-     
-     
-     
-     
-     
+     }   
 }
