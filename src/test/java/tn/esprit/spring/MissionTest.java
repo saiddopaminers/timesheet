@@ -82,7 +82,7 @@ public class MissionTest {
 	//Methode sert à tester la suppression 
 	@Ignore
 	@Test
-	public void testDeleteMissionTest() throws Exception {
+	public void ttestDeleteMissionTest() throws Exception {
 		Mission mission =im.FindMissionById(5).get();
 		im.deleteMission(5);
 		Mission mission1=null;
