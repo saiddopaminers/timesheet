@@ -1,6 +1,6 @@
   pipeline {
       environment{
-          registry = 'souma0720/timesheet.git'
+        
 		registryCredential= 'dockerhub'
 		dockerImage = ''
 	}
