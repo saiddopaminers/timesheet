@@ -60,7 +60,7 @@ public class MissionTest {
 
 	//Methode sert à tester l'update
 	@Test
-	public void testUpdateMissionTset() throws ParseException {
+	public void ttestUpdateMissionTset() throws ParseException {
 		try {
 			Mission m = im.FindMissionById(10).get();
 			m.setName("wevioo");	
