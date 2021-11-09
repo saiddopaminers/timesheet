@@ -1,19 +1,21 @@
 pipeline {
+  
+    agent any
     environment { 
 
-        registry = "siwar/Timesheet" 
+        registry = "sywar/timesheet" 
 
         registryCredential = 'dockerHub' 
 
         dockerImage = '' 
 
     }
-    agent any
+    
     stages{
             stage('checkout git'){
                 steps {
                     echo 'Pulling...';
-                    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet.git';
+                    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet';
                     }
                }
                
@@ -38,6 +40,8 @@ pipeline {
                     bat "mvn clean install"
                         }
              }
+             
+             
                           
                           
             stage("publish to nexus") {
@@ -47,7 +51,25 @@ pipeline {
                 
                         }
             }
-            
+            stage('Build Docker Image') {
+
+			steps {
+				bat 'docker build -t sywar/timesheet:latest .'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+				sh 'docker push sywar/timesheet:latest'
+			}
+		}
+		stage('Cleaning up'){
+			steps{
+				bat "docker rmi sywar/timesheet:latest" 
+			}
+		}
+		
             
 		
 }
@@ -61,3 +83,4 @@ post {
          }
      }
 }
+
