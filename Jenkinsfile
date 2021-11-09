@@ -1,10 +1,20 @@
 pipeline {
 agent any
+environment { 
+
+        registry = "saidali12/Timesheet" 
+
+        registryCredential = 'dockerHub' 
+
+        dockerImage = '' 
+        PATH = "D:\\Program Files\\Git\\usr\\bin;D:\\Program Files\\Git\\bin;${env.PATH}"
+
+    }
 stages{
 stage('checkout git'){
 steps {
     echo 'Pulling...';
-    git branch: 'main', url: 'https://github.com/saiddopaminers/timesheet.git';
+    git branch: 'main', url: 'https://github.com/saiddopaminers/Timesheet';
 }
 }
 stage('Test, build, sonar'){
@@ -33,6 +43,27 @@ stage("publish to nexus") {
                 
             }
         }
+stage('Build Docker Image') {
+
+			steps {
+				bat 'docker build -t saidali12/timesheet:latest .'
+			}
+		}
+
+		stage('Push') {
+
+			steps {
+			    bat'docker login -u "saidali12" -p "said121212" docker.io '
+			    bat 'docker push saidali12/timesheet:latest'
+			}
+			
+		}
+		stage('Cleaning up'){
+			steps{
+			    bat'docker login -u "saidali12" -p "said121212" docker.io '
+				bat "docker rmi saidali12/timesheet:latest" 
+			}
+		}  
 }
 post {
          failure {  
